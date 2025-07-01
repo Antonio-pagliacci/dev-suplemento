@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,6 +15,7 @@
   <!-- CSS personalizado -->
   <link rel="stylesheet" href="./styles/style.css" />
 </head>
+
 <body class="d-flex flex-column min-vh-100">
 
   <!-- NAVBAR -->
@@ -39,6 +41,7 @@
     <h3 class="text-warning">🛒 Meu Carrinho</h3>
     <ul class="list-group mb-3" id="carrinho-lista"></ul>
     <p class="fs-5">Total: <strong>R$ <span id="carrinho-total">0.00</span></strong></p>
+    <button class="btn btn-warning fw-bold" onclick="finalizar()">Finalizar Compra</button>
   </section>
 
   <!-- FOOTER -->
@@ -47,7 +50,8 @@
       <div class="row">
         <div class="col-md-4 mb-3">
           <h5 class="text-warning"><a href="sobre.html">Sobre nós</a></h5>
-          <p class="small">A DevSuplementos nasceu para turbinar o corpo e o cérebro de quem vive entre linhas de código e barras na academia.</p>
+          <p class="small">A DevSuplementos nasceu para turbinar o corpo e o cérebro de quem vive entre linhas de código
+            e barras na academia.</p>
         </div>
         <div class="col-md-4 mb-3">
           <h5 class="text-warning"><a href="contato.html">Contato</a></h5>
@@ -75,6 +79,12 @@
 
   <!-- Script para exibir carrinho -->
   <script>
+    function finalizar() {
+      alert("Compra finalizada!");    
+      document.getElementById('carrinho-lista').innerHTML = '';
+      document.getElementById('carrinho-total').innerHTML = '';
+    }
+    
     const carrinhoLista = document.getElementById('carrinho-lista');
     const carrinhoTotal = document.getElementById('carrinho-total');
 
@@ -118,4 +128,5 @@
     atualizarCarrinho();
   </script>
 </body>
+
 </html>
